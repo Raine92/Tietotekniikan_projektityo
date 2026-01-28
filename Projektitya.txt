@@ -1,0 +1,21 @@
+Projektityä
+
+Shopify kauppa-alusta, jossa myydään käytettyjä pelejä.
+Tällä hetkellä ”varastona” toimii excel, jonne laitettu, mitä pelejä omistaa.
+Halutaan tehdä jonkinlainen varastonhallintajärjestelmä, jonne voidaan CRUD / REST-tyyppisesti lisätä pelejä.
+Lisäksi halutaan tehdä ”api”, joka hakee kyseisen käytetyn pelin myyntihintaa esim vpd.fi sekä ”pricecharting.com. Esim pricechartingilla on oma api, mutta se maksaa.
+Voidaan tehdä esim Reactilla jonkinlainen frontend – backend -tyyppinen ratkaisu. Joka alussa ainakin toimii lokaalisti. Tarvittaessa laajennetaan ”nettiin”. 
+Lisäksi, kun lisätään pelejä, otetaan siitä myös kuva myynti-ilmoitusta varten. Voitaisiinko sitä hyödyntää, että kuvasta saadaan tiedot esim. mille konsolille peli on ja että mikä pelin nimi on. Täten voidaan kirjoittaa ”automaattisesti”, mikä peli on. Tähän joko googlen käänteinen kuvahaku, tai konenäkömenetelmillä tehty.
+Lisäksi ”asiakas” haluaa, kun on katsottu API:lla mahdollinen myyntihinta, saadaan määriteltyä ”oma hinta”, eli voidaan määritellä millä katteella myydään.
+Eli varastona (nyt ainakin excel, siirrytään tietokantaan), tehdään siihen crud / rest. Tehdään API hinnoittelua varten, ja mahdollinen kuvien lisäyksen yhteyteen nimen lisäys varastoon.
+Tällä hetkellä excelissä on välilehdillä joko PS3 tai PS4,
+Lisäksi on vain ”id” numero, eli 1,2,3,4,5,6, sekä pelin nimi.
+Voitaisiin lisätä, esim id, pelin nimi, API:lla haettu myyntihinta, säädettävä kate%, myyntihinta, (ostohinta), muokkauspäivänmäärä.
+
+Jatkokehityksenä, että integroidaan varasto ja shopify yhteen.
+
+Kuka tekee mitäkin nyt alustavasti:
+Aki. Jatkaa Shopifyn säätämistään :D
+Samuli. Hinnoittelun APIa / web scraping
+Patrik. Reactin alustus. Frontti, bäkki jne. Joku visio, miltä se varastonhallinta tulee näyttämään :D
+Raine. Muutetaan Excel tietokannaksi.
