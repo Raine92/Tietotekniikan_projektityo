@@ -1,0 +1,10 @@
+# Excelin väliaikaistiedostot
+~$*
+
+# Käyttöjärjestelmän roskat
+.DS_Store
+Thumbs.db
+
+# Myöhemmin tulevat Node-paketit
+node_modules/
+.env
