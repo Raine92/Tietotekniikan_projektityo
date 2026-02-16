@@ -30,7 +30,7 @@ const App = () => {
       </nav>
 
       <main className="max-w-6xl mx-auto p-6">
-        {view === 'inventory' && <GameList />}
+        {view === 'inventory' && <GameList batches={batches} />}
         {view === 'add-game' && <AddGameForm batches={batches} onAdded={() => setView('inventory')} />}
         {view === 'add-batch' && <BatchForm onAdded={() => { fetchBatches(); setView('add-game'); }} />}
       </main>
