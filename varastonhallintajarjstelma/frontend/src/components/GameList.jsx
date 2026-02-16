@@ -73,7 +73,7 @@ const GameList = ({ batches = [] }) => {
     ? games
     : games.filter(game => {
       const batch = batches.find(b => b.nimi === selectedBatch);
-        console.log("Selected batch:", selectedBatch, "Game batch ID:", game.batch_id, "Batch found:", batch);
+        //console.log("Selected batch:", selectedBatch, "Game batch ID:", game.batch_id, "Batch found:", batch);
         return batch && game.batch_id._id === batch._id;
       });
 
@@ -98,8 +98,8 @@ const GameList = ({ batches = [] }) => {
         >
           <option value="all">Kaikki ({games.length})</option>
           {batches.map(batch => (
-            console.log(batch),
-            console.log(games),
+            //console.log(batch),
+            //console.log(games),
             <option key={batch._id} value={batch.nimi}>
               {batch.nimi} ({games.filter(g => g.batch_id._id === batch._id).length})
             </option>
