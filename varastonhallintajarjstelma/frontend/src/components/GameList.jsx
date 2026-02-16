@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Trash2, RefreshCw, Layers, Edit3, X, ExternalLink, Loader2, ShoppingBag } from 'lucide-react';
 
-const GameList = () => {
+const GameList = ({ batches = [] }) => {
   const [games, setGames] = useState([]);
   const [updatingId, setUpdatingId] = useState(null);
   const [editGame, setEditGame] = useState(null);
+  const [selectedBatch, setSelectedBatch] = useState('all');
 
   const API_URL = "http://localhost:5000";
 
@@ -68,6 +69,16 @@ const GameList = () => {
     } catch (err) { alert("Muokkaus epäonnistui."); }
   };
 
+  const filteredGames = selectedBatch === 'all'
+    ? games
+    : games.filter(game => {
+      const batch = batches.find(b => b.nimi === selectedBatch);
+        console.log("Selected batch:", selectedBatch, "Game batch ID:", game.batch_id, "Batch found:", batch);
+        return batch && game.batch_id._id === batch._id;
+      });
+
+
+  
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center mb-6">
@@ -77,8 +88,28 @@ const GameList = () => {
         </span>
       </div>
 
-      <div className="grid grid-cols-1 gap-4">
-        {games.map(game => (
+      {/* Batch Filter */}
+      <div className="flex items-center gap-3 mb-4">
+        <Layers size={18} className="text-indigo-500" />
+        <select
+          value={selectedBatch}
+          onChange={(e) => setSelectedBatch(e.target.value)}
+          className="px-4 py-2 rounded-xl border border-slate-300 bg-white text-sm font-bold text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        >
+          <option value="all">Kaikki ({games.length})</option>
+          {batches.map(batch => (
+            console.log(batch),
+            console.log(games),
+            <option key={batch._id} value={batch.nimi}>
+              {batch.nimi} ({games.filter(g => g.batch_id._id === batch._id).length})
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="space-y-2">
+        {filteredGames.map(game => (
+          //console.log(game),
           <div key={game._id} className="bg-white p-4 rounded-2xl shadow-sm border flex items-center gap-6 hover:shadow-md transition-all group">
             
             {/* Kuva - korjattu renderöinti */}
