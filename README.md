@@ -1,6 +1,7 @@
 #  GAME-STOCK v2
 
-**GAME-STOCK v2** on moderni Node.js/React-pohjainen varastonhallintajärjestelmä videopelien keräilijöille ja jälleenmyyjille. Sovellus laskee automaattisesti pelien omakustannehinnan ostoerien (Batch) perusteella ja hakee markkinahinnat useista eri lähteistä.
+**GAME-STOCK v2** on moderni Node.js/React-pohjainen varastonhallintajärjestelmä videopelien keräilijöille ja jälleenmyyjille. 
+Sovellus laskee automaattisesti pelien omakustannehinnan ostoerien (Batch) perusteella ja hakee markkinahinnat useista eri lähteistä.
 
 ---
 
@@ -48,8 +49,8 @@ Huom: Portti 5000 on oletus, jota frontend kutsuu.
 ### 4. Käynnistäminen
 Sovellus vaatii kaksi terminaalia toimiakseen samanaikaisesti:
 Terminaalissa. 
-Backend npm run dev    http://localhost:5000
- Frontend npm run dev    http://localhost:5173
+1. Backend npm run dev    http://localhost:5000
+2. Frontend npm run dev    http://localhost:5173
 
 ### 5. Hyvä tietää
 MongoDB Compass: Suositellaan tietokannan graafiseen tarkasteluun (yhdistä: mongodb://localhost:27017)
