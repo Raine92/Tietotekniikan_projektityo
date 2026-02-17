@@ -36,8 +36,6 @@ cd varastonhallintajarjstelma
 2. Asenna riippuvuudet: `npm install`
 3. Luo tiedosto `.env` ja lisää seuraavat tiedot:
    ```env
-   PORT=5000
-   MONGO_URI=mongodb://127.0.0.1:27017/peli_varasto
    SCRAPFLY_API_KEY=tähän_samulin_avain
 Huom: Portti 5000 on oletus, jota frontend kutsuu.
 
@@ -49,11 +47,11 @@ Huom: Portti 5000 on oletus, jota frontend kutsuu.
 ### 4. Käynnistäminen
 Sovellus vaatii kaksi terminaalia toimiakseen samanaikaisesti:
 Terminaalissa. 
-1. Backend npm run dev    http://localhost:5000
-2. Frontend npm run dev    http://localhost:5173
+1. Backend: npm run dev    http://localhost:5000
+2. Frontend: npm run dev    http://localhost:5173
 
 ### 5. Hyvä tietää
-MongoDB Compass: Suositellaan tietokannan graafiseen tarkasteluun (yhdistä: mongodb://localhost:27017)
-Hintojen haku: eBay-hinnat käyttävät mediaania vääristymien välttämiseksi.Muut lähteet haetaan Puppeteer-skreippauksella.
-Kuvat: Kuvat tallentuvat paikallisesti palvelimelle backend/uploads/ -kansioon.
-Haku-linkit: Hintalaatikot toimivat suorina linkkeinä alkuperäisiin hakutuloksiin.
+* MongoDB Compass: Suositellaan tietokannan graafiseen tarkasteluun (yhdistä: mongodb://localhost:27017)
+* Hintojen haku: eBay-hinnat käyttävät mediaania vääristymien välttämiseksi.Muut lähteet haetaan Puppeteer-skreippauksella.
+* Kuvat: Kuvat tallentuvat paikallisesti palvelimelle backend/uploads/ -kansioon.
+* Haku-linkit: Hintalaatikot toimivat suorina linkkeinä alkuperäisiin hakutuloksiin.
